@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS Recursos(
 
 CREATE TABLE IF NOT EXISTS Usuarios(
     idUsuario INT NOT NULL DEFAULT nextval('idUser'),
-    email VARCHAR(50) NOT NULL UNIQUE,
+    mail VARCHAR(50) NOT NULL UNIQUE,
     nombre VARCHAR(45) NOT NULL,
     contrasena VARCHAR(20) NOT NULL,
     programa VARCHAR(30) NOT NULL,
@@ -26,8 +26,8 @@ CREATE TABLE IF NOT EXISTS Usuarios(
 CREATE TABLE IF NOT EXISTS Disponibilidad(
     id INT NOT NULL DEFAULT nextval('idDisp'),
     idRecurso INT NOT NULL,
-    inicio time NOT NULL,
-    final time NOT NULL,
+    tiempoInicio time NOT NULL,
+    tiempoFinal time NOT NULL,
     PRIMARY KEY (id),
     FOREIGN KEY(idRecurso) REFERENCES Recursos(idRecurso))
 ;
@@ -36,8 +36,8 @@ CREATE TABLE IF NOT EXISTS Reservas(
     idReserva INT NOT NULL  DEFAULT nextval('idReserv'),
     idRecurso INT NOT NULL,
     idUsuario INT NOT NULL,
-    inicio time NOT NULL,
-    final time NOT NULL,
+    tiempoInicio time NOT NULL,
+    tiempoFinal time NOT NULL,
     recurrencia BOOLEAN NOT NULL,
     periodicidad VARCHAR(15),
     finalRecurrencia time,
