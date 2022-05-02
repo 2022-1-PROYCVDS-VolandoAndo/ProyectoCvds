@@ -18,7 +18,7 @@
         <result property='estado' column='estado' />
 	</resultMap>
 
-	<select id="getReserva" resultMap="UsuarioResult"
+	<select id="getReserva" resultMap="ReservaResult"
 		parameterType="map">
 		SELECT
 			r.idReserva,

@@ -70,4 +70,8 @@ public class Recurso {
         this.estado = estado;
     }
     
+    @Override
+    public String toString() {
+        return "Recurso{" + "idRecurso=" + idRecurso + ", nombre=" + nombre + ", tipo=" + tipo + ", capacidad=" + capacidad + ", ubicacion=" + ubicacion + ", estado=" + estado + "}";
+    }
 }

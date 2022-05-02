@@ -1,7 +1,9 @@
 package edu.eci.cvds.persistence;
 
+import edu.eci.cvds.entities.Usuario;
+
 public interface UsuarioDAO {
     
-    public String getTipo(String mail) throws PersistenceException;
+    public Usuario getTipo(String mail) throws PersistenceException;
 
 }

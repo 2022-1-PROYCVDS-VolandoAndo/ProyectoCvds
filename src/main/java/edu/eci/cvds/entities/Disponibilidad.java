@@ -52,4 +52,9 @@ public class Disponibilidad {
         this.tiempoFinal = tiempoFinal;
     }
     
+    @Override
+    public String toString() {
+        return "Disponibilidad{" + "id=" + id + ", idRecurso=" + idRecurso+ ", tiempoInicio=" + tiempoInicio + ", tiempoFinal=" + tiempoFinal + "}";
+    }
+
 }

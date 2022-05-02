@@ -17,6 +17,11 @@
 	<select id="getTipo" resultMap="UsuarioResult"
 		parameterType="map">
 		SELECT
+			u.idUsuario,
+			u.mail,
+			u.nombre,
+			u.contrasena,
+			u.programa,
 			u.tipo
 		FROM Usuarios as u
 			WHERE u.mail = #{mail}

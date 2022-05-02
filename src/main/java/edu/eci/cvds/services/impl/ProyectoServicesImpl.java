@@ -6,9 +6,11 @@ import com.google.inject.Inject;
 
 import edu.eci.cvds.entities.Disponibilidad;
 import edu.eci.cvds.entities.Recurso;
+import edu.eci.cvds.entities.Reserva;
+import edu.eci.cvds.entities.Usuario;
 import edu.eci.cvds.persistence.DisponibilidadDAO;
 import edu.eci.cvds.persistence.RecursoDAO;
-// import edu.eci.cvds.persistence.ReservaDAO;
+import edu.eci.cvds.persistence.ReservaDAO;
 import edu.eci.cvds.persistence.UsuarioDAO;
 import edu.eci.cvds.services.ProyectoServices;
 import edu.eci.cvds.services.ServicesException;
@@ -24,8 +26,8 @@ public class ProyectoServicesImpl implements ProyectoServices {
     @Inject
     private DisponibilidadDAO disponibilidadDAO;
 
-    // @Inject 
-    // private ReservaDAO reservaDAO;
+    @Inject 
+    private ReservaDAO reservaDAO;
 
     @Override
     public void addRecurso(Recurso recurso) throws ServicesException {
@@ -83,7 +85,7 @@ public class ProyectoServicesImpl implements ProyectoServices {
     }
 
     @Override
-    public String getTipo(String mail) throws ServicesException {
+    public Usuario getTipo(String mail) throws ServicesException {
         try {
             return usuarioDAO.getTipo(mail);
         } catch (Exception e) {
@@ -107,6 +109,15 @@ public class ProyectoServicesImpl implements ProyectoServices {
             return disponibilidadDAO.getDisponibilidad(idRecurso);
         } catch (Exception e) {
             throw new ServicesException("No fue posible consultar la disponibilidad de este recurso", e);
+        }
+    }
+
+    @Override
+    public List<Reserva> getReserva(int idReserva) throws ServicesException {
+        try {
+            return reservaDAO.getReserva(idReserva);
+        } catch (Exception e) {
+            throw new ServicesException("No fue posible consultar esta reserva", e);
         }
     }
     

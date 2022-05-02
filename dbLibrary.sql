@@ -47,3 +47,15 @@ CREATE TABLE IF NOT EXISTS Reservas(
     FOREIGN KEY(idRecurso) REFERENCES Recursos(idRecurso),
     FOREIGN KEY(idUsuario) REFERENCES Usuarios(idUsuario))
 ;
+
+insert into Usuarios (mail, nombre, contrasena, programa, tipo) VALUES ('jhon.pineros@mail.escuelaing.edu.co', 'Sebastian Piñeros', '123456', 'Sistemas', 'Comunidad');
+insert into Usuarios (mail, nombre, contrasena, programa, tipo) VALUES ('juan.martinez-car@mail.escuelaing.edu.co', 'Juan Martinez', 'asdfgh', 'Sistemas', 'Comunidad');
+insert into Usuarios (mail, nombre, contrasena, programa, tipo) VALUES ('admin@mail.escuelaing.edu.co', 'admin', 'qazwsx', 'NA', 'Administrador');
+
+insert into Recursos (nombre, tipo, capacidad, ubicacion, estado) VALUES ('Sala de estudio 1', 'Sala de estudio', 4, 'Bliblioteca 1', TRUE);
+insert into Recursos (nombre, tipo, capacidad, ubicacion, estado) VALUES ('Sala de estudio 2', 'Sala de estudio', 6, 'Bliblioteca 1', TRUE);
+insert into Recursos (nombre, tipo, capacidad, ubicacion, estado) VALUES ('Equipo de estudio 1', 'Equipo de estudio', 1, 'Bliblioteca 1', TRUE);
+insert into Recursos (nombre, tipo, capacidad, ubicacion, estado) VALUES ('Equipo de estudio 2', 'Equipo de estudio', 1, 'Bliblioteca 2', TRUE);
+insert into Recursos (nombre, tipo, capacidad, ubicacion, estado) VALUES ('Equipo multimedia 1', 'Equipo multimedia', 1, 'Bliblioteca 2', TRUE);
+insert into Recursos (nombre, tipo, capacidad, ubicacion, estado) VALUES ('Equipo multimedia 2', 'Equipo multimedia', 1, 'Bliblioteca 2', TRUE);
+insert into Recursos (nombre, tipo, capacidad, ubicacion, estado) VALUES ('Equipo multimedia 3', 'Equipo multimedia', 1, 'Bliblioteca 2', FALSE);

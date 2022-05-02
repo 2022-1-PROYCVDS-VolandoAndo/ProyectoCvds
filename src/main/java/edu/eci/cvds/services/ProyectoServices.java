@@ -4,6 +4,8 @@ import java.util.List;
 
 import edu.eci.cvds.entities.Disponibilidad;
 import edu.eci.cvds.entities.Recurso;
+import edu.eci.cvds.entities.Reserva;
+import edu.eci.cvds.entities.Usuario;
 
 public interface ProyectoServices {
     
@@ -59,7 +61,7 @@ public interface ProyectoServices {
      * @return rol del usuario
      * @throws ServicesException
      */
-    public String getTipo(String mail) throws ServicesException;
+    public Usuario getTipo(String mail) throws ServicesException;
 
     /**
      * Inserta el horario de un recurso en la base.
@@ -75,5 +77,13 @@ public interface ProyectoServices {
      * @throws ServicesException
      */
     public List<Disponibilidad> getDisponibilidad(int idRecurso) throws ServicesException;
+
+    /**
+     * Consultar una reserva.
+     * @param idReserva
+     * @return
+     * @throws ServicesException
+     */
+    public List<Reserva> getReserva(int idReserva) throws ServicesException;
     
 }

@@ -113,4 +113,9 @@ public class Reserva {
         this.estado = estado;
     }
 
+    @Override
+    public String toString() {
+        return "Reserva{" + "idReserva=" + idReserva + ", idRecurso=" + idRecurso + ", idUsuario=" + idUsuario + ", tiempoInicio=" + tiempoInicio + ", tiempoFinal=" + tiempoFinal + ", recurrencia=" + recurrencia + ", periodicidad=" + periodicidad + ", finalRecurrencia=" + finalRecurrencia + ", fechaSolicitud=" + fechaSolicitud + ", estado=" + estado + "}";
+    }
+
 }
