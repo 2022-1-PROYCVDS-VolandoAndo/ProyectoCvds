@@ -14,7 +14,7 @@ public interface RecursoDAO {
 
     public List<Recurso> getRecursosTipo(String tipo) throws PersistenceException;
     
-    public List<Recurso> getRecursosCapacidad(String tipo) throws PersistenceException;
+    public List<Recurso> getRecursosCapacidad(String capacidad) throws PersistenceException;
 
     public List<Recurso> getRecursosUbicacion(String ubicacion) throws PersistenceException;
 
