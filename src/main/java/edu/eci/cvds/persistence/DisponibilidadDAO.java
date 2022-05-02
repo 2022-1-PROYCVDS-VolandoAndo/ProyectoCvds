@@ -8,6 +8,6 @@ public interface DisponibilidadDAO {
 
     public void addDisponibilidad(Disponibilidad disponibilidad) throws PersistenceException;
     
-    public List<Disponibilidad> getDisponibilidad() throws PersistenceException;
+    public List<Disponibilidad> getDisponibilidad(int idRecurso) throws PersistenceException;
 
 }

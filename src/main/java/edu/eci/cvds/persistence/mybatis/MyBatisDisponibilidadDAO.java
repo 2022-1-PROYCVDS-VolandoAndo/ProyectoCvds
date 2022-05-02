@@ -24,9 +24,9 @@ public class MyBatisDisponibilidadDAO implements DisponibilidadDAO {
     }
 
     @Override
-    public List<Disponibilidad> getDisponibilidad() throws PersistenceException {
+    public List<Disponibilidad> getDisponibilidad(int idRecurso) throws PersistenceException {
         try {
-            return disponibilidadMapper.getDisponibilidad();
+            return disponibilidadMapper.getDisponibilidad(idRecurso);
         } catch (Exception e) {
             throw new PersistenceException("Error al realizar la consulta", e);
         }

@@ -10,6 +10,6 @@ public interface DisponibilidadMapper {
     
     public void addDisponibilidad(@Param("disponibilidad") Disponibilidad disponibilidad);
     
-    public List<Disponibilidad> getDisponibilidad();
+    public List<Disponibilidad> getDisponibilidad(@Param("idRecurso") int idRecurso);
     
 }

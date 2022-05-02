@@ -17,4 +17,15 @@
         (#{h.idRecurso}, #{h.tiempoInicio}, #{h.tiempoFinal})
     </insert>
 
+	<select id="getDisponibilidad" resultMap="DisponibilidadResult"
+            parameterType="map">
+        SELECT
+            d.id,
+            d.idRecurso,
+            d.tiempoInicio,
+            d.tiempoFinal
+        FROM Recursos as d
+            WHERE d.idRecurso = #{idRecurso}
+    </select>
+
 </mapper>
