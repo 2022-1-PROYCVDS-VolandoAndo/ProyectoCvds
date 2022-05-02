@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="edu.eci.cvds.persistence.mybatis.mappers.RecursoMapper">
+
+    <resultMap type='Recurso' id='RecursoResult'>
+        <id property='idRecurso' column='idRecurso' />
+        <result property='nombre' column='nombre' />
+        <result property='tipo' column='tipo' />
+        <result property='capacidad' column='capacidad' />
+        <result property='ubicacion' column='ubicacion' />
+        <result property='estado' column='estado' />
+    </resultMap>
+
+    <insert id="addRecurso" parameterType="map">
+        insert into Recursos (nombre, tipo, capacidad, ubicacion, estado) values
+        (#{r.nombre}, #{r.tipo}, #{r.capacidad}, #{r.ubicacion}, #{r.estado})
+    </insert>
+
+    <select id="getRecursosActivos" resultMap="RecursoResult"
+            parameterType="map">
+        SELECT
+            r.idRecurso,
+            r.nombre,
+            r.tipo,
+            r.capacidad,
+            r.ubicacion,
+            r.estado
+        FROM Recursos as r
+            WHERE r.estado
+    </select>
+
+    <select id="getRecurso" resultMap="RecursoResult"
+            parameterType="map">
+        SELECT
+            r.idRecurso,
+            r.nombre,
+            r.tipo,
+            r.capacidad,
+            r.ubicacion,
+            r.estado
+        FROM RECURSOS as r
+            WHERE r.nombre = #{nombre} and r.estado
+    </select>
+
+    <select id="getRecursosTipo" resultMap="RecursoResult"
+            parameterType="map">
+        SELECT
+        r.idRecurso,
+        r.nombre,
+        r.tipo,
+        r.capacidad,
+        r.ubicacion,
+        r.estado
+        FROM RECURSOS as r
+        WHERE r.tipo = #{tipo} and r.estado
+    </select>
+
+
+    <select id="getRecursosCapacidad" resultMap="RecursoResult"
+            parameterType="map">
+        SELECT
+        r.idRecurso,
+        r.nombre,
+        r.tipo,
+        r.capacidad,
+        r.ubicacion,
+        r.estado
+        FROM RECURSOS as r
+        WHERE r.capacidad = #{capacidad} and r.estado
+    </select>
+
+    <select id="getRecursosUbicacion" resultMap="RecursoResult"
+            parameterType="map">
+        SELECT
+        r.idRecurso,
+        r.nombre,
+        r.tipo,
+        r.capacidad,
+        r.ubicacion,
+        r.estado
+        FROM RECURSOS as r
+        WHERE r.ubicacion = #{ubicacion} and r.estado
+    </select>
+
+</mapper>
