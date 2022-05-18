@@ -57,12 +57,12 @@ public interface ProyectoServices {
     public List<Recurso> getRecursosUbicacion(String ubicacion) throws PersistenceException;
 
     /**
-     * Consultar el rol de un usuario de acuerdo a su mail.
+     * Consultar un usuario de acuerdo a su mail.
      * @param mail
      * @return rol del usuario
      * @throws PersistenceException
      */
-    public Usuario getTipo(String mail) throws PersistenceException;
+    public Usuario getUsuario(String mail) throws PersistenceException;
 
     /**
      * Inserta el horario de un recurso en la base.

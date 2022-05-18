@@ -61,8 +61,8 @@ public class ProyectoServicesImpl implements ProyectoServices {
     }
 
     @Override
-    public Usuario getTipo(String mail) throws PersistenceException {
-        return usuarioDAO.getTipo(mail);
+    public Usuario getUsuario(String mail) throws PersistenceException {
+        return usuarioDAO.getUsuario(mail);
     }
 
     @Override

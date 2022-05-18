@@ -6,6 +6,6 @@ import edu.eci.cvds.entities.Usuario;
 
 public interface UsuarioMapper {
     
-    public Usuario getTipo(@Param("mail") String mail);
+    public Usuario getUsuario(@Param("mail") String mail);
 
 }

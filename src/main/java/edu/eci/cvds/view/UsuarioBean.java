@@ -84,7 +84,7 @@ public class UsuarioBean extends BasePageBean{
         UsernamePasswordToken token = new UsernamePasswordToken(mail, password);
         subject = SecurityUtils.getSubject();
         try {
-            Usuario usuario = usuarioServices.getTipo(mail);
+            Usuario usuario = usuarioServices.getUsuario(mail);
             if (usuario != null) {
                 userId = usuario.getIdUsuario();
                 tipo = usuario.getTipo();
@@ -125,7 +125,7 @@ public class UsuarioBean extends BasePageBean{
     public String adminType() {
         String res = "";
         try {
-            res = (usuarioServices.getTipo(mail).getTipo().equals("Administrador")) ? "True" : "None";
+            res = (usuarioServices.getUsuario(mail).getTipo().equals("Administrador")) ? "True" : "None";
         } catch (PersistenceException e) {
             res = "None";
         }
@@ -135,7 +135,7 @@ public class UsuarioBean extends BasePageBean{
     public String studentType() {
         String res = "";
         try {
-            res = (usuarioServices.getTipo(mail).getTipo().equals("Comunidad")) ? "True" : "None";
+            res = (usuarioServices.getUsuario(mail).getTipo().equals("Comunidad")) ? "True" : "None";
         } catch (PersistenceException e) {
             res = "None";
         }
