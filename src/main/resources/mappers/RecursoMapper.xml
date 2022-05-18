@@ -15,7 +15,7 @@
 
     <insert id="addRecurso" parameterType="map">
         insert into Recursos (nombre, tipo, capacidad, ubicacion, estado) values
-        (#{r.nombre}, #{r.tipo}, #{r.capacidad}, #{r.ubicacion}, #{r.estado})
+        (#{recurso.nombre}, #{recurso.tipo}, #{recurso.capacidad}, #{recurso.ubicacion}, #{recurso.estado})
     </insert>
 
     <select id="getRecursosActivos" resultMap="RecursoResult"

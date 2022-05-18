@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <link rel="stylesheet" href="style.css"></link>
+    <link rel="icon" type="image/ico" href="/IconDispatcher/favicon.ico"/>
+
+    <style>        
+        body{
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: rgb(41, 41, 51);
+            color: white;
+            text-align: center;
+            padding: 1% 3%;
+            align-content: center;
+        }
+
+        .form{
+            background-color: rgba(171, 16, 41, 0.694);
+            padding: 3% 9%;
+            border-radius: 3%;
+            display: inline-block;
+        }
+
+        .texto{
+            font-size: 32px;
+        }
+    </style>
+    
+    <h:head>
+        <link rel = "icon" href ="https://observatics.edu.co/wp-content/uploads/sites/20/2019/06/Logo-Escuela-ingenier%C3%ADa.png"/>
+    </h:head>
+
+    <title>Biblioteca</title>
+    <h:body>
+        <div class="div">
+            <div>
+                <h1>Plataforma Gestión de Recursos Biblioteca</h1>
+            </div>
+            <div class="form">
+                <h:form id="form1">
+                    <p:commandButton value="Consultar Recursos" actionListener="#{pagesBean.consultarRecursosPage()}"/>
+                    <p:commandButton value="Iniciar Sesion" actionListener="#{pagesBean.loginPage()}"/>
+                </h:form>
+            </div>
+        </div>
+    </h:body>
+</html>

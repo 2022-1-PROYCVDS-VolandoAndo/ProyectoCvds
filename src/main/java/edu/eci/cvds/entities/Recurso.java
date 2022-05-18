@@ -22,6 +22,14 @@ public class Recurso {
         this.estado = estado;
     }
 
+    public Recurso(String nombre, String tipo, int capacidad, String ubicacion, boolean estado) {
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.capacidad = capacidad;
+        this.ubicacion = ubicacion;
+        this.estado = estado;
+    }
+
     public int getIdRecurso() {
         return idRecurso;
     }

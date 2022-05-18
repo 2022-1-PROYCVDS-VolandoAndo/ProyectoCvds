@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:p="http://primefaces.org/ui"
+    xmlns:pe="http://primefaces.org/ui/extensions" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:jsf="http://xmlns.jcp.org/jsf">
+    
+    <style>    
+        body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: rgb(41, 41, 51);
+            color: white;
+            text-align: center;
+            padding: 1% 3%;
+            align-content: center;
+        }
+
+        .divBody {
+            background: rgba(171, 16, 41, 0.694);
+            display: grid;
+            border-radius: 15px;
+            text-align: center;
+            grid-template-columns: 50% 35%;
+            padding: 4% 5%;
+            margin: 3%;
+        }
+
+        .input {
+            height: 40px;
+            margin-bottom: 50px;
+            text-align: left;
+            align-items: center;
+        }
+
+        .boton {
+            width: 10%;
+            height: 30px;
+            margin: 3px;
+            text-align: center;
+            align-self: center;
+            align-items: center;
+            position: relative;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: left;
+            margin-left: 50%;
+            margin-right: auto;
+        }
+        
+        .select {
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .msgs{
+            font-size: 32px;
+        }
+    </style>
+
+    <h:head>
+        <link rel = "icon" href ="https://observatics.edu.co/wp-content/uploads/sites/20/2019/06/Logo-Escuela-ingenier%C3%ADa.png"/>
+    </h:head>
+
+    <title>Adicionar Recurso</title>
+    <body>
+        <p:messages class="msgs" id="messages" showDetail="true" closable="true">
+            <p:autoUpdate />
+        </p:messages>
+            <h1>Registrar Recurso</h1>
+            <h:form id="formRegisterRecurso">
+                <div class="divBody">
+                    <h2>Nombre</h2>
+                    <p:inputText class="input" id="Nombre" type="long" value="#{RecursoBean.nombre}"
+                        placeholder="Nombre del recurso" />
+                    <h2>Ubicación</h2>
+                    <h:selectOneMenu value="#{RecursoBean.ubicacion}" class="select">
+                        <f:selectItem hidden="" itemLabel="Seleccione ubicacion" itemValue="" />
+                        <f:selectItem class="select" itemLabel="Biblioteca Central" itemValue="Biblioteca Central" />
+                        <f:selectItem class="select" itemLabel="Biblioteca Satelite" itemValue="Biblioteca Satelite" />
+                    </h:selectOneMenu>
+                    <h2>Tipo</h2>
+                    <h:selectOneMenu value="#{RecursoBean.tipo}" class="select">
+                        <f:selectItem hidden="" itemLabel="Seleccione tipo" itemValue="" />
+                        <f:selectItem class="select" itemLabel="Sala de Estudio" itemValue="Sala de Estudio" />
+                        <f:selectItem class="select" itemLabel="Equipo multimedia" itemValue="Equipo multimedia" />
+                        <f:selectItem class="select" itemLabel="Equipo de Computo" itemValue="Equipo de Computo" />
+                    </h:selectOneMenu>
+                    <h2>Capacidad</h2>
+                    <p:inputText class="input" id="capacidad" type="Integer" value="#{RecursoBean.capacidad}"
+                        placeholder="Capacidad del recurso" />
+
+                    <h2>Desde</h2>
+                    <h:selectOneMenu value="#{RecursoBean.tiempoInicio}" class="select">
+                        <f:selectItem hidden="" itemLabel="Seleccione hora" itemValue="" />
+                        <f:selectItem class="select" itemLabel="7:00 AM" itemValue="7" />
+                        <f:selectItem class="select" itemLabel="8:00 AM" itemValue="8" />
+                        <f:selectItem class="select" itemLabel="9:00 AM" itemValue="9" />
+                        <f:selectItem class="select" itemLabel="10:00 AM" itemValue="10" />
+                        <f:selectItem class="select" itemLabel="11:00 AM" itemValue="11" />
+                        <f:selectItem class="select" itemLabel="12:00 PM" itemValue="12" />
+                        <f:selectItem class="select" itemLabel="1:00 PM" itemValue="13" />
+                        <f:selectItem class="select" itemLabel="2:00 PM" itemValue="14" />
+                        <f:selectItem class="select" itemLabel="3:00 PM" itemValue="15" />
+                        <f:selectItem class="select" itemLabel="4:00 PM" itemValue="16" />
+                        <f:selectItem class="select" itemLabel="5:00 PM" itemValue="17" />
+                        <f:selectItem class="select" itemLabel="6:00 PM" itemValue="18" />
+                        <f:selectItem class="select" itemLabel="7:00 PM" itemValue="19" />
+                    </h:selectOneMenu>
+
+                    <h2>Hasta</h2>
+                    <h:selectOneMenu value="#{RecursoBean.tiempoFinal}" class="select">
+                        <f:selectItem hidden="" itemLabel="Seleccione hora" itemValue="" />
+                        <f:selectItem class="select" itemLabel="7:00 AM" itemValue="7" />
+                        <f:selectItem class="select" itemLabel="8:00 AM" itemValue="8" />
+                        <f:selectItem class="select" itemLabel="9:00 AM" itemValue="9" />
+                        <f:selectItem class="select" itemLabel="10:00 AM" itemValue="10" />
+                        <f:selectItem class="select" itemLabel="11:00 AM" itemValue="11" />
+                        <f:selectItem class="select" itemLabel="12:00 PM" itemValue="12" />
+                        <f:selectItem class="select" itemLabel="1:00 PM" itemValue="13" />
+                        <f:selectItem class="select" itemLabel="2:00 PM" itemValue="14" />
+                        <f:selectItem class="select" itemLabel="3:00 PM" itemValue="15" />
+                        <f:selectItem class="select" itemLabel="4:00 PM" itemValue="16" />
+                        <f:selectItem class="select" itemLabel="5:00 PM" itemValue="17" />
+                        <f:selectItem class="select" itemLabel="6:00 PM" itemValue="18" />
+                        <f:selectItem class="select" itemLabel="7:00 PM" itemValue="19" />
+                    </h:selectOneMenu>
+                    <h2>Dias</h2>
+
+                    <div>
+                        <p:selectManyCheckbox id="checkboxDias" value="#{RecursoBean.dias}">
+                            <f:selectItem itemLabel="Lunes" itemValue="Lunes"></f:selectItem>
+                            <f:selectItem itemLabel="Martes" itemValue="Martes"></f:selectItem>
+                            <f:selectItem itemLabel="Miercoles" itemValue="Miercoles"></f:selectItem>
+                            <f:selectItem itemLabel="Jueves" itemValue="Jueves"></f:selectItem>
+                            <f:selectItem itemLabel="Viernes" itemValue="Viernes"></f:selectItem>
+                            <f:selectItem itemLabel="Sabado" itemValue="Sabado"></f:selectItem>
+                        </p:selectManyCheckbox>
+                    </div>
+                </div>
+                <p:commandButton update="formRegisterRecurso" class="boton" value="Registrar"
+                    actionListener="#{RecursoBean.insertarRecurso()}" />
+                <br>
+                <p:commandButton update="formRegisterRecurso" class="boton" value="Volver"
+                    actionListener="#{pagesBean.homePage()}" /></br>
+            </h:form>
+    </body>
+</html>

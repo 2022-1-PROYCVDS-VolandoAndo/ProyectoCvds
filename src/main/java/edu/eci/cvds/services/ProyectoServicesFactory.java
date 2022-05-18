@@ -7,7 +7,9 @@ import static com.google.inject.Guice.createInjector;
 
 import org.mybatis.guice.XMLMyBatisModule;
 
+import edu.eci.cvds.entities.Recurso;
 import edu.eci.cvds.persistence.DisponibilidadDAO;
+import edu.eci.cvds.persistence.PersistenceException;
 import edu.eci.cvds.persistence.RecursoDAO;
 import edu.eci.cvds.persistence.ReservaDAO;
 import edu.eci.cvds.persistence.UsuarioDAO;
@@ -53,9 +55,9 @@ public class ProyectoServicesFactory {
         return instance;
     }
 
-    public static void main(String a[]) throws ServicesException {
+    public static void main(String a[]) throws PersistenceException {
         ProyectoServices biblioteca = ProyectoServicesFactory.getInstance().getServiciosProyecto();
-        System.out.println(biblioteca.getRecursosActivos());
+        biblioteca.addRecurso(new Recurso("Sala de estudio 3","Sala de estudio",5,"Biblioteca Central",true));
     }
 
 }

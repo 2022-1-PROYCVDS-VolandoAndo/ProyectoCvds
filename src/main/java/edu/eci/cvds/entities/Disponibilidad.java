@@ -4,7 +4,7 @@ import java.sql.Time;
 
 public class Disponibilidad {
 
-    private int id;
+    private String dia;
     private int idRecurso;
     private Time tiempoInicio;
     private Time tiempoFinal;
@@ -13,19 +13,19 @@ public class Disponibilidad {
         super();
     }
 
-    public Disponibilidad(int id, int idRecurso, Time tiempoInicio, Time tiempoFinal) {
-        this.id = id;
+    public Disponibilidad(String dia, int idRecurso, Time tiempoInicio, Time tiempoFinal) {
+        this.dia = dia;
         this.idRecurso = idRecurso;
         this.tiempoInicio = tiempoInicio;
         this.tiempoFinal = tiempoFinal;
     }
 
-    public int getId() {
-        return id;
+    public String getDia() {
+        return dia;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setDia(String dia) {
+        this.dia = dia;
     }
 
     public int getIdRecurso() {
@@ -54,7 +54,7 @@ public class Disponibilidad {
     
     @Override
     public String toString() {
-        return "Disponibilidad{" + "id=" + id + ", idRecurso=" + idRecurso+ ", tiempoInicio=" + tiempoInicio + ", tiempoFinal=" + tiempoFinal + "}";
+        return "Disponibilidad{" + "dia=" + dia + ", idRecurso=" + idRecurso+ ", tiempoInicio=" + tiempoInicio + ", tiempoFinal=" + tiempoFinal + "}";
     }
 
 }

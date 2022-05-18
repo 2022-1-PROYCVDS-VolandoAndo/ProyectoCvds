@@ -9,6 +9,7 @@ import edu.eci.cvds.entities.Recurso;
 import edu.eci.cvds.entities.Reserva;
 import edu.eci.cvds.entities.Usuario;
 import edu.eci.cvds.persistence.DisponibilidadDAO;
+import edu.eci.cvds.persistence.PersistenceException;
 import edu.eci.cvds.persistence.RecursoDAO;
 import edu.eci.cvds.persistence.ReservaDAO;
 import edu.eci.cvds.persistence.UsuarioDAO;
@@ -30,95 +31,53 @@ public class ProyectoServicesImpl implements ProyectoServices {
     private ReservaDAO reservaDAO;
 
     @Override
-    public void addRecurso(Recurso recurso) throws ServicesException {
-        try {
-            recursoDAO.addRecurso(recurso);
-        } catch (Exception e) {
-            throw new ServicesException("Error al insertar el recurso", e);
-        }
-        
+    public void addRecurso(Recurso recurso) throws PersistenceException {
+        recursoDAO.addRecurso(recurso);
     }
 
     @Override
-    public List<Recurso> getRecursosActivos() throws ServicesException {
-        try {
-            return recursoDAO.getRecursosActivos();
-        } catch (Exception e) {
-            throw new ServicesException("No fue posible consultar los recursos activos", e);
-        }
+    public List<Recurso> getRecursosActivos() throws PersistenceException {
+        return recursoDAO.getRecursosActivos();
     }
 
     @Override
-    public Recurso getRecurso(String nombre) throws ServicesException {
-        try {
-            return recursoDAO.getRecurso(nombre);
-        } catch (Exception e) {
-            throw new ServicesException("No fue posible consultar el recurso", e);
-        }
+    public Recurso getRecurso(String nombre) throws PersistenceException {
+        return recursoDAO.getRecurso(nombre);
     }
 
     @Override
-    public List<Recurso> getRecursosTipo(String tipo) throws ServicesException {
-        try {
-            return recursoDAO.getRecursosTipo(tipo);
-        } catch (Exception e) {
-            throw new ServicesException("No fue posible consultar los recursos", e);
-        }
+    public List<Recurso> getRecursosTipo(String tipo) throws PersistenceException {
+        return recursoDAO.getRecursosTipo(tipo);
     }
 
     @Override
-    public List<Recurso> getRecursosCapacidad(String capacidad) throws ServicesException {
-        try {
-            return recursoDAO.getRecursosCapacidad(capacidad);
-        } catch (Exception e) {
-            throw new ServicesException("No fue posible consultar los recursos", e);
-        }
+    public List<Recurso> getRecursosCapacidad(String capacidad) throws PersistenceException {
+        return recursoDAO.getRecursosCapacidad(capacidad);
     }
 
     @Override
-    public List<Recurso> getRecursosUbicacion(String ubicacion) throws ServicesException {
-        try {
-            return recursoDAO.getRecursosUbicacion(ubicacion);
-        } catch (Exception e) {
-            throw new ServicesException("No fue posible consultar los recursos", e);
-        }
+    public List<Recurso> getRecursosUbicacion(String ubicacion) throws PersistenceException {
+        return recursoDAO.getRecursosUbicacion(ubicacion);
     }
 
     @Override
-    public Usuario getTipo(String mail) throws ServicesException {
-        try {
-            return usuarioDAO.getTipo(mail);
-        } catch (Exception e) {
-            throw new ServicesException("No fue posible consultar el tipo de este usuario", e);
-        }
+    public Usuario getTipo(String mail) throws PersistenceException {
+        return usuarioDAO.getTipo(mail);
     }
 
     @Override
-    public void addDisponibilidad(Disponibilidad disponibilidad) throws ServicesException {
-        try {
-            disponibilidadDAO.addDisponibilidad(disponibilidad);
-        } catch (Exception e) {
-            throw new ServicesException("No fue posible insertar la disponibilidad", e);
-        }
-        
+    public void addDisponibilidad(Disponibilidad disponibilidad) throws PersistenceException {
+        disponibilidadDAO.addDisponibilidad(disponibilidad);
     }
 
     @Override
-    public List<Disponibilidad> getDisponibilidad(int idRecurso) throws ServicesException {
-        try {
-            return disponibilidadDAO.getDisponibilidad(idRecurso);
-        } catch (Exception e) {
-            throw new ServicesException("No fue posible consultar la disponibilidad de este recurso", e);
-        }
+    public List<Disponibilidad> getDisponibilidad(int idRecurso) throws PersistenceException {
+        return disponibilidadDAO.getDisponibilidad(idRecurso);
     }
 
     @Override
-    public List<Reserva> getReserva(int idReserva) throws ServicesException {
-        try {
-            return reservaDAO.getReserva(idReserva);
-        } catch (Exception e) {
-            throw new ServicesException("No fue posible consultar esta reserva", e);
-        }
+    public List<Reserva> getReserva(int idReserva) throws PersistenceException {
+        return reservaDAO.getReserva(idReserva);
     }
     
 }

@@ -6,25 +6,25 @@
 <mapper namespace="edu.eci.cvds.persistence.mybatis.mappers.DisponibilidadMapper">
 
 	<resultMap type='Disponibilidad' id='DisponibilidadResult'>
-		<id property='id' column='id' />
-		<result property='idRecurso' column='idRecurso' />
+		<id property='dia' column='dia' />
+		<id property='idRecurso' column='idRecurso' />
 		<result property='tiempoInicio' column='tiempoInicio' />
 		<result property='tiempoFinal' column='tiempoFinal' />
 	</resultMap>
 
 	<insert id="addDisponibilidad" parameterType="map">
-        insert into Disponibilidad (idRecurso, tiempoInicio, tiempoFinal) values
-        (#{h.idRecurso}, #{h.tiempoInicio}, #{h.tiempoFinal})
+        insert into Disponibilidad (dia, idRecurso, tiempoInicio, tiempoFinal) values
+        (#{disponibilidad.dia}, #{disponibilidad.idRecurso}, #{disponibilidad.tiempoInicio}, #{disponibilidad.tiempoFinal})
     </insert>
 
 	<select id="getDisponibilidad" resultMap="DisponibilidadResult"
             parameterType="map">
         SELECT
-            d.id,
+            d.dia,
             d.idRecurso,
             d.tiempoInicio,
             d.tiempoFinal
-        FROM Recursos as d
+        FROM Disponibilidad as d
             WHERE d.idRecurso = #{idRecurso}
     </select>
 
