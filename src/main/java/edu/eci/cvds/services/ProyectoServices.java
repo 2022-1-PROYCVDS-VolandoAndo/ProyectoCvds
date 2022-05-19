@@ -54,7 +54,7 @@ public interface ProyectoServices {
      * @return lista de recursos
      * @throws PersistenceException
      */
-    public List<Recurso> getRecursosCapacidad(String capacidad) throws PersistenceException;
+    public List<Recurso> getRecursosCapacidad(int capacidad) throws PersistenceException;
 
     /**
      * Consultar recursos de acuerdo a su ubicacion.

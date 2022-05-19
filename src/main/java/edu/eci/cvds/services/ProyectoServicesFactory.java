@@ -7,7 +7,6 @@ import static com.google.inject.Guice.createInjector;
 
 import org.mybatis.guice.XMLMyBatisModule;
 
-import edu.eci.cvds.entities.Recurso;
 import edu.eci.cvds.persistence.DisponibilidadDAO;
 import edu.eci.cvds.persistence.PersistenceException;
 import edu.eci.cvds.persistence.RecursoDAO;

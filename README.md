@@ -9,5 +9,3 @@
 - Jhon Sebastian Piñeros Barrera
 - Product Owner: Hernan Tenjo
 
-## Descipcion 
--  

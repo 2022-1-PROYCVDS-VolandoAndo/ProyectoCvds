@@ -51,9 +51,9 @@ public class MyBatisRecursoDAO implements RecursoDAO {
     }
 
     @Override
-    public List<Recurso> getRecursosCapacidad(String tipo) throws PersistenceException {
+    public List<Recurso> getRecursosCapacidad(int capacidad) throws PersistenceException {
         try {
-            return recursoMapper.getRecursosCapacidad(tipo);
+            return recursoMapper.getRecursosCapacidad(capacidad);
         } catch (Exception e) {
             throw new PersistenceException("Error al realizar la consulta", e);
         }

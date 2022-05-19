@@ -14,7 +14,6 @@ import edu.eci.cvds.persistence.RecursoDAO;
 import edu.eci.cvds.persistence.ReservaDAO;
 import edu.eci.cvds.persistence.UsuarioDAO;
 import edu.eci.cvds.services.ProyectoServices;
-import edu.eci.cvds.services.ServicesException;
 
 public class ProyectoServicesImpl implements ProyectoServices {
 
@@ -56,7 +55,7 @@ public class ProyectoServicesImpl implements ProyectoServices {
     }
 
     @Override
-    public List<Recurso> getRecursosCapacidad(String capacidad) throws PersistenceException {
+    public List<Recurso> getRecursosCapacidad(int capacidad) throws PersistenceException {
         return recursoDAO.getRecursosCapacidad(capacidad);
     }
 

@@ -18,7 +18,7 @@ public interface RecursoMapper {
 
     public List<Recurso> getRecursosTipo(@Param("tipo") String tipo);
     
-    public List<Recurso> getRecursosCapacidad(@Param("capacidad") String capacidad);
+    public List<Recurso> getRecursosCapacidad(@Param("capacidad") int capacidad);
 
     public List<Recurso> getRecursosUbicacion(@Param("ubicacion") String ubicacion);
 
