@@ -32,4 +32,16 @@ public class PagesBean implements Serializable{
     public void consultarRecursosPage() throws IOException{
         FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/consultarRecursos.xhtml");
     }
+
+    public void visualizarReservasPage() throws IOException{
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/visualizarReservas.xhtml");
+    }
+
+    public void reservasCanceladasPage() throws IOException{
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/reservasCanceladas.xhtml");
+    }
+
+    public void reservasTerminadasPage() throws IOException{
+        FacesContext.getCurrentInstance().getExternalContext().redirect("/faces/reservasTerminadas.xhtml");
+    }
 }

@@ -44,6 +44,19 @@
             WHERE r.nombre = #{nombre} and r.estado
     </select>
 
+    <select id="getRecursoId" resultMap="RecursoResult"
+            parameterType="map">
+        SELECT
+            r.idRecurso,
+            r.nombre,
+            r.tipo,
+            r.capacidad,
+            r.ubicacion,
+            r.estado
+        FROM RECURSOS as r
+            WHERE r.idRecurso = #{idRecurso} and r.estado
+    </select>
+
     <select id="getRecursosTipo" resultMap="RecursoResult"
             parameterType="map">
         SELECT

@@ -12,27 +12,123 @@
 		<result property='tiempoInicio' column='tiempoInicio' />
 		<result property='tiempoFinal' column='tiempoFinal' />
 		<result property='recurrencia' column='recurrencia' />
-        <result property='periodicidad' column='periodicidad' />
-        <result property='finalRecurrencia' column='finalRecurrencia' />
-        <result property='fechaSolicitud' column='fechaSolicitud' />
-        <result property='estado' column='estado' />
+    <result property='periodicidad' column='periodicidad' />
+    <result property='finalRecurrencia' column='finalRecurrencia' />
+    <result property='fechaSolicitud' column='fechaSolicitud' />
+    <result property='etapa' column='etapa' />
+    <result property='estado' column='estado' />
 	</resultMap>
+
+  <insert id="insertarReserva" parameterType="map">
+    insert into RESERVAS (idRecurso, idUsuario, tiempoInicio, tiempoFinal, recurrencia, periodicidad, finalRecurrencia, etapa, estado) values
+    (#{reserva.idRecurso}, #{reserva.idUsuario}, #{reserva.tiempoInicio}, #{reserva.tiempoFinal}, #{reserva.recurrencia}, #{reserva.periodicidad}, #{reserva.finalRecurrencia}, #{reserva.fechaSolicitud}, #{reserva.etapa}, #{reserva.estado})
+  </insert>
+
+  <select id="getReservas" resultMap="ReservaResult"
+		parameterType="map">
+		SELECT
+			r.idReserva,
+      r.idRecurso,
+      r.idUsuario,
+      r.tiempoInicio,
+      r.tiempoFinal,
+      r.recurrencia,
+      r.periodicidad,
+      r.finalRecurrencia,
+      r.fechaSolicitud,
+      r.etapa,
+      r.estado
+		FROM Reservas as r
+	</select>
+
+  <select id="getReservasUsuario" resultMap="ReservaResult"
+		parameterType="map">
+		SELECT
+			r.idReserva,
+      r.idRecurso,
+      r.idUsuario,
+      r.tiempoInicio,
+      r.tiempoFinal,
+      r.recurrencia,
+      r.periodicidad,
+      r.finalRecurrencia,
+      r.fechaSolicitud,
+      r.etapa,
+      r.estado
+		FROM Reservas as r
+			WHERE r.idUsuario = #{idUsuario} and r.etapa = 'Activo'
+	</select>
+
+  <select id="getReservasUsuarioCanceladas" resultMap="ReservaResult"
+		parameterType="map">
+		SELECT
+			r.idReserva,
+      r.idRecurso,
+      r.idUsuario,
+      r.tiempoInicio,
+      r.tiempoFinal,
+      r.recurrencia,
+      r.periodicidad,
+      r.finalRecurrencia,
+      r.fechaSolicitud,
+      r.etapa,
+      r.estado
+		FROM Reservas as r
+			WHERE r.idUsuario = #{idUsuario} and r.etapa = 'Cancelado'
+	</select>
+
+  <select id="getReservasUsuarioFinalizadas" resultMap="ReservaResult"
+		parameterType="map">
+		SELECT
+			r.idReserva,
+      r.idRecurso,
+      r.idUsuario,
+      r.tiempoInicio,
+      r.tiempoFinal,
+      r.recurrencia,
+      r.periodicidad,
+      r.finalRecurrencia,
+      r.fechaSolicitud,
+      r.etapa,
+      r.estado
+		FROM Reservas as r
+			WHERE r.idUsuario = #{idUsuario} and r.etapa = 'Terminado'
+	</select>
 
 	<select id="getReserva" resultMap="ReservaResult"
 		parameterType="map">
 		SELECT
 			r.idReserva,
-            r.idRecurso,
-            r.idUsuario,
-            r.tiempoInicio,
-            r.tiempoFinal,
-            r.recurrencia,
-            r.periodicidad,
-            r.finalRecurrencia,
-            r.fechaSolicitud,
-            r.estado
-		FROM Reserva as r
+      r.idRecurso,
+      r.idUsuario,
+      r.tiempoInicio,
+      r.tiempoFinal,
+      r.recurrencia,
+      r.periodicidad,
+      r.finalRecurrencia,
+      r.fechaSolicitud,
+      r.etapa,
+      r.estado
+		FROM Reservas as r
 			WHERE r.idReserva = #{idReserva}
+	</select>
+
+  <select id="getReservasRecurso" resultMap="ReservaResult"
+		parameterType="map">
+		SELECT
+			r.idReserva,
+      r.idRecurso,
+      r.idUsuario,
+      r.tiempoInicio,
+      r.tiempoFinal,
+      r.recurrencia,
+      r.periodicidad,
+      r.finalRecurrencia,
+      r.fechaSolicitud,
+      r.etapa,
+      r.estado
+		FROM Reservas as r
+			WHERE r.idRecurso = #{idRecurso}
 	</select>
 
 </mapper>

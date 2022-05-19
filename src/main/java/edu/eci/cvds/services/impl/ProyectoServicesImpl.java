@@ -46,6 +46,11 @@ public class ProyectoServicesImpl implements ProyectoServices {
     }
 
     @Override
+    public Recurso getRecursoId(int idRecurso) throws PersistenceException {
+        return recursoDAO.getRecursoId(idRecurso);
+    }
+
+    @Override
     public List<Recurso> getRecursosTipo(String tipo) throws PersistenceException {
         return recursoDAO.getRecursosTipo(tipo);
     }
@@ -76,8 +81,38 @@ public class ProyectoServicesImpl implements ProyectoServices {
     }
 
     @Override
-    public List<Reserva> getReserva(int idReserva) throws PersistenceException {
+    public void addReserva(Reserva reserva) throws PersistenceException{
+        reservaDAO.addReserva(reserva);
+    }
+
+    @Override
+    public List<Reserva> getReservas() throws PersistenceException{
+        return reservaDAO.getReservas();
+    }
+
+    @Override
+    public List<Reserva> getReservasUsuario(int idUsuario) throws PersistenceException{
+        return reservaDAO.getReservasUsuario(idUsuario);
+    }
+
+    @Override
+    public List<Reserva> getReservasUsuarioFinaliazadas(int idUsuario) throws PersistenceException {
+        return reservaDAO.getReservasUsuarioFinalizadas(idUsuario);
+    }
+
+    @Override
+    public List<Reserva> getReservasUsuarioCanceladas(int idUsuario) throws PersistenceException {
+        return reservaDAO.getReservasUsuarioCanceladas(idUsuario);
+    }
+
+    @Override
+    public Reserva getReserva(int idReserva) throws PersistenceException {
         return reservaDAO.getReserva(idReserva);
+    }
+
+    @Override
+    public List<Reserva> getReservasRecurso(int idRecurso) throws PersistenceException{
+        return reservaDAO.getReservasRecurso(idRecurso);
     }
     
 }

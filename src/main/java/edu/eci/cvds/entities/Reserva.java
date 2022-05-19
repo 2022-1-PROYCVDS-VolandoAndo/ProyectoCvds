@@ -1,26 +1,28 @@
 package edu.eci.cvds.entities;
 
-import java.sql.Time;
+import java.sql.Timestamp;
 
 public class Reserva {
     
     private int idReserva;
     private int idRecurso;
     private int idUsuario;
-    private Time tiempoInicio;
-    private Time tiempoFinal;
+    private Timestamp tiempoInicio;
+    private Timestamp tiempoFinal;
     private boolean recurrencia;
     private String periodicidad;
-    private Time finalRecurrencia;
-    private Time fechaSolicitud;
+    private Timestamp finalRecurrencia;
+    private Timestamp fechaSolicitud;
+    private String etapa;
     private boolean estado;
 
     public Reserva(){
         super();
     }
 
-    public Reserva(int idReserva, int idRecurso, int idUsuario, Time tiempoInicio, Time tiempoFinal,
-            boolean recurrencia, String periodicidad, Time finalRecurrencia, Time fechaSolicitud, boolean estado) {
+    public Reserva(int idReserva, int idRecurso, int idUsuario, Timestamp tiempoInicio, Timestamp tiempoFinal,
+            boolean recurrencia, String periodicidad, Timestamp finalRecurrencia, Timestamp fechaSolicitud, String etapa,
+            boolean estado) {
         this.idReserva = idReserva;
         this.idRecurso = idRecurso;
         this.idUsuario = idUsuario;
@@ -30,6 +32,20 @@ public class Reserva {
         this.periodicidad = periodicidad;
         this.finalRecurrencia = finalRecurrencia;
         this.fechaSolicitud = fechaSolicitud;
+        this.etapa = etapa;
+        this.estado = estado;
+    }
+
+    public Reserva(int idRecurso, int idUsuario, Timestamp tiempoInicio, Timestamp tiempoFinal, boolean recurrencia,
+            String periodicidad, Timestamp finalRecurrencia, String etapa, boolean estado) {
+        this.idRecurso = idRecurso;
+        this.idUsuario = idUsuario;
+        this.tiempoInicio = tiempoInicio;
+        this.tiempoFinal = tiempoFinal;
+        this.recurrencia = recurrencia;
+        this.periodicidad = periodicidad;
+        this.finalRecurrencia = finalRecurrencia;
+        this.etapa = etapa;
         this.estado = estado;
     }
 
@@ -57,19 +73,19 @@ public class Reserva {
         this.idUsuario = idUsuario;
     }
 
-    public Time getTiempoInicio() {
+    public Timestamp getTiempoInicio() {
         return tiempoInicio;
     }
 
-    public void setTiempoInicio(Time tiempoInicio) {
+    public void setTiempoInicio(Timestamp tiempoInicio) {
         this.tiempoInicio = tiempoInicio;
     }
 
-    public Time getTiempoFinal() {
+    public Timestamp getTiempoFinal() {
         return tiempoFinal;
     }
 
-    public void setTiempoFinal(Time tiempoFinal) {
+    public void setTiempoFinal(Timestamp tiempoFinal) {
         this.tiempoFinal = tiempoFinal;
     }
 
@@ -89,20 +105,28 @@ public class Reserva {
         this.periodicidad = periodicidad;
     }
 
-    public Time getFinalRecurrencia() {
+    public Timestamp getFinalRecurrencia() {
         return finalRecurrencia;
     }
 
-    public void setFinalRecurrencia(Time finalRecurrencia) {
+    public void setFinalRecurrencia(Timestamp finalRecurrencia) {
         this.finalRecurrencia = finalRecurrencia;
     }
 
-    public Time getFechaSolicitud() {
+    public Timestamp getFechaSolicitud() {
         return fechaSolicitud;
     }
 
-    public void setFechaSolicitud(Time fechaSolicitud) {
+    public void setFechaSolicitud(Timestamp fechaSolicitud) {
         this.fechaSolicitud = fechaSolicitud;
+    }
+
+    public String getEtapa() {
+        return etapa;
+    }
+
+    public void setEtapa(String etapa) {
+        this.etapa = etapa;
     }
 
     public boolean isEstado() {
@@ -115,7 +139,7 @@ public class Reserva {
 
     @Override
     public String toString() {
-        return "Reserva{" + "idReserva=" + idReserva + ", idRecurso=" + idRecurso + ", idUsuario=" + idUsuario + ", tiempoInicio=" + tiempoInicio + ", tiempoFinal=" + tiempoFinal + ", recurrencia=" + recurrencia + ", periodicidad=" + periodicidad + ", finalRecurrencia=" + finalRecurrencia + ", fechaSolicitud=" + fechaSolicitud + ", estado=" + estado + "}";
+        return "Reserva{" + "idReserva=" + idReserva + ", idRecurso=" + idRecurso + ", idUsuario=" + idUsuario + ", tiempoInicio=" + tiempoInicio + ", tiempoFinal=" + tiempoFinal + ", recurrencia=" + recurrencia + ", periodicidad=" + periodicidad + ", finalRecurrencia=" + finalRecurrencia + ", fechaSolicitud=" + fechaSolicitud + ", etapa=" + etapa + ", estado=" + estado + "}";
     }
 
 }

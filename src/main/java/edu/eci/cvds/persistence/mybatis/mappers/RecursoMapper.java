@@ -14,6 +14,8 @@ public interface RecursoMapper {
 
     public Recurso getRecurso(@Param("nombre") String nombre);
 
+    public Recurso getRecursoId(@Param("idRecurso") int idRecurso);
+
     public List<Recurso> getRecursosTipo(@Param("tipo") String tipo);
     
     public List<Recurso> getRecursosCapacidad(@Param("capacidad") String capacidad);

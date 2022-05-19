@@ -18,11 +18,10 @@
 
         .divBody {
             background: rgba(171, 16, 41, 0.694);
-            display: grid;
+            display:flexbox;
             border-radius: 15px;
-            text-align: center;
-            grid-template-columns: 50% 35%;
-            padding: 4% 5%;
+            align-content:stretch;
+            padding: 1% 5%;
             margin: 3%;
         }
 
@@ -43,14 +42,6 @@
             position: relative;
         }
 
-        h2 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            text-align: left;
-            margin-left: 50%;
-            margin-right: auto;
-        }
-        
         .select {
             border-radius: 10px;
             margin-bottom: 10px;
@@ -70,7 +61,7 @@
         <p:messages class="msgs" id="messages" showDetail="true" closable="true">
             <p:autoUpdate />
         </p:messages>
-            <h1>Registrar Recurso</h1>
+            <h1>Adicionar Recurso</h1>
             <h:form id="formRegisterRecurso">
                 <div class="divBody">
                     <h2>Nombre</h2>
@@ -93,7 +84,7 @@
                     <p:inputText class="input" id="capacidad" type="Integer" value="#{RecursoBean.capacidad}"
                         placeholder="Capacidad del recurso" />
 
-                    <h2>Desde</h2>
+                    <h2>Inicio disponibilidad</h2>
                     <h:selectOneMenu value="#{RecursoBean.tiempoInicio}" class="select">
                         <f:selectItem hidden="" itemLabel="Seleccione hora" itemValue="" />
                         <f:selectItem class="select" itemLabel="7:00 AM" itemValue="7" />
@@ -111,7 +102,7 @@
                         <f:selectItem class="select" itemLabel="7:00 PM" itemValue="19" />
                     </h:selectOneMenu>
 
-                    <h2>Hasta</h2>
+                    <h2>Finalizacion disponibilidad</h2>
                     <h:selectOneMenu value="#{RecursoBean.tiempoFinal}" class="select">
                         <f:selectItem hidden="" itemLabel="Seleccione hora" itemValue="" />
                         <f:selectItem class="select" itemLabel="7:00 AM" itemValue="7" />
@@ -129,7 +120,6 @@
                         <f:selectItem class="select" itemLabel="7:00 PM" itemValue="19" />
                     </h:selectOneMenu>
                     <h2>Dias</h2>
-
                     <div>
                         <p:selectManyCheckbox id="checkboxDias" value="#{RecursoBean.dias}">
                             <f:selectItem itemLabel="Lunes" itemValue="Lunes"></f:selectItem>

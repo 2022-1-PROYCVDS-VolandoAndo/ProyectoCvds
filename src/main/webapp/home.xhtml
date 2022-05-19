@@ -60,7 +60,10 @@
                     <h:commandButton class="boton" value="Registrar Recurso" style="display: #{UsuarioBean.adminType()}" actionListener="#{pagesBean.adicionarRecursoPage()}"/>
                 </div>
                 <div>
-                    <p:commandButton class="boton" value="Consultar Recurso" actionListener="#{pagesBean.consultarRecursosPage()}"/>
+                    <p:commandButton class="boton" value="Consultar Recursos" actionListener="#{pagesBean.consultarRecursosPage()}"/>
+                </div>
+                <div>
+                    <h:commandButton class="boton" value="Reservas activas" style="display: #{UsuarioBean.studentType()}" actionListener="#{pagesBean.visualizarReservasPage()}"/>
                 </div>
                 <div>
                     <h:commandButton action="#{UsuarioBean.cerrarSesion()}" class="boton" value="Cerrar Sesion"/>

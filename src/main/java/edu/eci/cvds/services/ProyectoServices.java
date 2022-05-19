@@ -33,6 +33,14 @@ public interface ProyectoServices {
     public Recurso getRecurso(String nombre) throws PersistenceException;
 
     /**
+     * Busca un recurso por su id.
+     * @param idRecurso
+     * @return
+     * @throws PersistenceException
+     */
+    public Recurso getRecursoId(int idRecurso) throws PersistenceException;
+
+    /**
      * Consultar recursos segun su tipo.
      * @param tipo
      * @return lista de recursos
@@ -80,11 +88,57 @@ public interface ProyectoServices {
     public List<Disponibilidad> getDisponibilidad(int idRecurso) throws PersistenceException;
 
     /**
-     * Consultar una reserva.
+     * Adicionar una reserva.
+     * @param reserva
+     * @throws PersistenceException
+     */
+    public void addReserva(Reserva reserva) throws PersistenceException;
+
+    /**
+     * Consultar las reservas existentes.
+     * @return
+     * @throws PersistenceException
+     */
+    public List<Reserva> getReservas() throws PersistenceException;
+
+    /**
+     * Consultar las reservas activas de un usuario.
+     * @param idUsuario
+     * @return
+     * @throws PersistenceException
+     */
+    public List<Reserva> getReservasUsuario(int idUsuario) throws PersistenceException;
+
+    /**
+     * Consultar las finalizadas reservas de un usuario.
+     * @param idUsuario
+     * @return
+     * @throws PersistenceException
+     */
+    public List<Reserva> getReservasUsuarioFinaliazadas(int idUsuario) throws PersistenceException;
+
+    /**
+     * Consultar las reservas canceladas de un usuario.
+     * @param idUsuario
+     * @return
+     * @throws PersistenceException
+     */
+    public List<Reserva> getReservasUsuarioCanceladas(int idUsuario) throws PersistenceException;
+
+    /**
+     * Consultar una reserva por id.
      * @param idReserva
      * @return
      * @throws PersistenceException
      */
-    public List<Reserva> getReserva(int idReserva) throws PersistenceException;
+    public Reserva getReserva(int idReserva) throws PersistenceException;
+
+    /**
+     * Consultar las reservas segun el recurso.
+     * @param idRecurso
+     * @return
+     * @throws PersistenceException
+     */
+    public List<Reserva> getReservasRecurso(int idRecurso) throws PersistenceException;
     
 }

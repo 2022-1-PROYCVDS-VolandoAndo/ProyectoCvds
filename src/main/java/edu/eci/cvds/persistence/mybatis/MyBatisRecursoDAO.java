@@ -67,5 +67,14 @@ public class MyBatisRecursoDAO implements RecursoDAO {
             throw new PersistenceException("Error al realizar la consulta", e);
         }
     }
+
+    @Override
+    public Recurso getRecursoId(int idRecurso) throws PersistenceException {
+        try {
+            return recursoMapper.getRecursoId(idRecurso);
+        } catch (Exception e) {
+            throw new PersistenceException("Error al realizar la consulta", e);
+        }
+    }
     
 }

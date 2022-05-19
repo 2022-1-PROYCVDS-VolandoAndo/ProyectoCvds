@@ -57,7 +57,7 @@ public class ProyectoServicesFactory {
 
     public static void main(String a[]) throws PersistenceException {
         ProyectoServices biblioteca = ProyectoServicesFactory.getInstance().getServiciosProyecto();
-        System.out.println(biblioteca.getUsuario("jhon.pineros@mail.escuelaing.edu.co"));
+        System.out.println(biblioteca.getRecursoId(1));
     }
 
 }
